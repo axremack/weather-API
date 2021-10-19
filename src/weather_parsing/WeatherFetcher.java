@@ -2,9 +2,39 @@ package weather_parsing;
 
 import city_weather.CityWeather;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+
 public class WeatherFetcher {
 
-    public CityWeather getWeatherIn(String city) {
+    public void getWeatherIn() throws Exception {
+        final String api_key = "47631728a917d56bffde4b26e7e461e3";
+        String line;
+        HttpURLConnection urlConnection = null ;
 
+        try {
+            URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=Clermont-Ferrand&appid=47631728a917d56bffde4b26e7e461e3&units=Metric");
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            InputStreamReader input_reader = new InputStreamReader(in);
+            BufferedReader input_buff_reader = new BufferedReader(input_reader);
+            StringBuilder content = new StringBuilder();
+            while ((line = input_buff_reader.readLine()) != null) {
+                content.append(line);
+            }
+            System.out.println(content.toString());
+
+
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
     }
 }
