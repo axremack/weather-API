@@ -8,13 +8,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class WeatherFetcher {
 
-    public void getWeatherIn() throws Exception {
+    public CityWeather getWeatherIn() throws Exception {
         final String api_key = "47631728a917d56bffde4b26e7e461e3";
         String line;
+        String json;
         HttpURLConnection urlConnection = null ;
 
         try {
@@ -25,11 +28,16 @@ public class WeatherFetcher {
             InputStreamReader input_reader = new InputStreamReader(in);
             BufferedReader input_buff_reader = new BufferedReader(input_reader);
             StringBuilder content = new StringBuilder();
+
             while ((line = input_buff_reader.readLine()) != null) {
                 content.append(line);
             }
-            System.out.println(content.toString());
 
+            json = content.toString();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            CityWeather weather = gson.fromJson(json, CityWeather.class);
+
+            return weather;
 
         } finally {
             if (urlConnection != null) {
