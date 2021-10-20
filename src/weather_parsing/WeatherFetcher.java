@@ -25,7 +25,7 @@ public class WeatherFetcher {
             urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            InputStreamReader input_reader = new InputStreamReader(in);
+            InputStreamReader input_reader = new InputStreamReader(in, "UTF-8");
             BufferedReader input_buff_reader = new BufferedReader(input_reader);
             StringBuilder content = new StringBuilder();
 
@@ -34,8 +34,11 @@ public class WeatherFetcher {
             }
 
             json = content.toString();
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            Gson gson = new Gson();
             CityWeather weather = gson.fromJson(json, CityWeather.class);
+
+            String w = weather.toString();
+            System.out.print(w);
 
             return weather;
 

@@ -3,18 +3,18 @@ package city_weather;
 public class Temperature {
     // Paramètres obligatoires
     private double temp;
-    private double temp_feel;
-    private double temp_max;
-    private double temp_min;
+    private double feel;
+    private double max;
+    private double min;
     private double pressure;    //(maybe int ?)
     private double humidity;    //(maybe int ?)
 
     // Constructeur
-    public Temperature(double temp, double temp_feel, double temp_max, double temp_min, double pressure, double humidity) {
+    public Temperature(double temp, double feel, double max, double min, double pressure, double humidity) {
         this.temp = temp;
-        this.temp_feel = temp_feel;
-        this.temp_max = temp_max;
-        this.temp_min = temp_min;
+        this.feel = feel;
+        this.max = max;
+        this.min = min;
         this.pressure = pressure;
         this.humidity = humidity;
     }
@@ -28,28 +28,28 @@ public class Temperature {
         this.temp = temp;
     }
 
-    public double getTemp_feel() {
-        return temp_feel;
+    public double getFeel() {
+        return feel;
     }
 
-    public void setTemp_feel(double temp_feel) {
-        this.temp_feel = temp_feel;
+    public void setFeel(double feel) {
+        this.feel = feel;
     }
 
-    public double getTemp_max() {
-        return temp_max;
+    public double getMax() {
+        return max;
     }
 
-    public void setTemp_max(double temp_max) {
-        this.temp_max = temp_max;
+    public void setMax(double max) {
+        this.max = max;
     }
 
-    public double getTemp_min() {
-        return temp_min;
+    public double getMin() {
+        return min;
     }
 
-    public void setTemp_min(double temp_min) {
-        this.temp_min = temp_min;
+    public void setMin(double min) {
+        this.min = min;
     }
 
     public double getPressure() {
