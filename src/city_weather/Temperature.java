@@ -1,13 +1,22 @@
 package city_weather;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Temperature {
     // Paramètres obligatoires
     private double temp;
+
+    @SerializedName("feels_like")
     private double feel;
+
+    @SerializedName("temp_max")
     private double max;
+
+    @SerializedName("temp_min")
     private double min;
-    private double pressure;    //(maybe int ?)
-    private double humidity;    //(maybe int ?)
+
+    private double pressure;
+    private double humidity;
 
     // Constructeur
     public Temperature(double temp, double feel, double max, double min, double pressure, double humidity) {

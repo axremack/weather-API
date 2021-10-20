@@ -1,11 +1,14 @@
 package main;
 
+import city_weather.CityWeather;
 import weather_parsing.WeatherFetcher;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
         WeatherFetcher wf = new WeatherFetcher();
-        wf.getWeatherIn();
+        CityWeather c = wf.getWeatherIn();
+        //c.toString();
+
     }
 }

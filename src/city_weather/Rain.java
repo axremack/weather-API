@@ -1,8 +1,13 @@
 package city_weather;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Rain {
     // Paramètres obligatoires
+    @SerializedName("1h")
     private double volume_1h;
+
+    @SerializedName("3h")
     private double volume_3h;
 
     // Constructeur

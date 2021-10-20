@@ -1,8 +1,12 @@
 package city_weather;
 
+import com.google.gson.annotations.SerializedName;
+
 public class GeneralWeather {
     // Paramètres obligatoires
+    @SerializedName("main")
     private String type;
+
     private String description;
 
     // Constructeurs

@@ -10,21 +10,20 @@ public class CityWeather {
     @SerializedName("weather")
     private GeneralWeather general_weather;
 
-    @SerializedName("main")
-    private Temperature temp;
+    //@SerializedName("main")
+    //private Temperature temp;
 
-    @SerializedName("name")
-    private Wind wind;
+    //private Wind wind;
     //private Rain rain;
     //private Snow snow;
     //private double cloudiness;
 
 
     // Constructeur
-    public CityWeather(GeneralWeather general_weather, Temperature temp, Wind wind, String city) {
+    public CityWeather(GeneralWeather general_weather, String city) {
         this.general_weather = general_weather;
-        this.temp = temp;
-        this.wind = wind;
+        //this.temp = temp;
+        //this.wind = wind;
         //this.rain = rain;
         //this.snow = snow;
         //this.cloudiness = cloudiness;
@@ -39,7 +38,7 @@ public class CityWeather {
     public void setGeneral_weather(GeneralWeather general_weather) {
         this.general_weather = general_weather;
     }
-
+    /*
     public Temperature getTemp() { return temp; }
 
     public void setTemp(Temperature temp) {
@@ -54,22 +53,13 @@ public class CityWeather {
         this.wind = wind;
     }
 
-    /*
-    public Rain getRain() {
-        return rain;
-    }
+    public Rain getRain() { return rain; }
 
-    public void setRain(Rain rain) {
-        this.rain = rain;
-    }
+    public void setRain(Rain rain) { this.rain = rain; }
 
-    public Snow getSnow() {
-        return snow;
-    }
+    public Snow getSnow() { return snow; }
 
-    public void setSnow(Snow snow) {
-        this.snow = snow;
-    }
+    public void setSnow(Snow snow) { this.snow = snow; }
 
     public double getCloudiness() {
         return cloudiness;
@@ -90,7 +80,7 @@ public class CityWeather {
     public String toString() {
         StringBuilder summary = new StringBuilder();
         return summary.append("Weather for city : ").append(this.city).append("\n")
-                //.append("General weather : ").append(general_weather.getType()).append(" -- ").append(general_weather.getDescription()).append("\n")
+                .append("General weather : ").append(general_weather.getType()).append(" -- ").append(general_weather.getDescription()).append("\n")
                 //.append("Current temperature : ").append(temp.getTemp()).append("°C\n")
                 //.append("Current temperature : ").append(temp.getTemp()).append("°C\n")
                 //.append("Temperature felt : ").append(temp.getFeel()).append("°C\n")

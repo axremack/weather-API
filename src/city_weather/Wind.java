@@ -1,8 +1,12 @@
 package city_weather;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Wind {
     // Paramètres obligatoires
     private double speed;
+
+    @SerializedName("deg")
     private double direction;  //(maybe int ?)
 
     // Paramètres optionnels
