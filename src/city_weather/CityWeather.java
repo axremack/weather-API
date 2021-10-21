@@ -13,17 +13,19 @@ public class CityWeather {
     @SerializedName("main")
     private Temperature temp;
 
-    //private Wind wind;
+    private Wind wind;
     //private Rain rain;
     //private Snow snow;
-    //private double cloudiness;
+
+    //@SerializedName("clouds.all")
+    //private int cloudiness;
 
 
     // Constructeur
-    public CityWeather(Temperature temp, String city) {
+    public CityWeather(Temperature temp, Wind wind, String city) {
         //this.general_weather = general_weather;
         this.temp = temp;
-        //this.wind = wind;
+        this.wind = wind;
         //this.rain = rain;
         //this.snow = snow;
         //this.cloudiness = cloudiness;
@@ -42,10 +44,8 @@ public class CityWeather {
     */
     public Temperature getTemp() { return temp; }
 
-    public void setTemp(Temperature temp) {
-        this.temp = temp;
-    }
-    /*
+    public void setTemp(Temperature temp) { this.temp = temp; }
+
     public Wind getWind() {
         return wind;
     }
@@ -54,6 +54,7 @@ public class CityWeather {
         this.wind = wind;
     }
 
+    /*
     public Rain getRain() { return rain; }
 
     public void setRain(Rain rain) { this.rain = rain; }
@@ -62,14 +63,17 @@ public class CityWeather {
 
     public void setSnow(Snow snow) { this.snow = snow; }
 
-    public double getCloudiness() {
+
+    public int getCloudiness() {
         return cloudiness;
     }
 
-    public void setCloudiness(double cloudiness) {
+    public void setCloudiness(int cloudiness) {
         this.cloudiness = cloudiness;
     }
-    */
+
+     */
+
     public String getCity() {
         return city;
     }
@@ -88,14 +92,15 @@ public class CityWeather {
                 .append("Minimum temperature : ").append(temp.getMin()).append("°C\n")
                 .append("Maximum temperature : ").append(temp.getMax()).append("°C\n")
                 .append("Pressure : ").append(temp.getPressure()).append(" Pa\n")
-                .append("Humidity : ").append(temp.getHumidity()).append(" %\n")
-                //.append("Wind speed : ").append(wind.getSpeed()).append("m/s\n")
-                //.append("Wind deg : ").append(wind.getDirection()).append("degrees\n")
-                //.append("Wind gust : ").append(wind.getGust()).append("m/s\n")
-                //.append("Rain volume in last hour : ").append(rain.getVolume_1h()).append("mm^3\n")
-                //.append("Rain volume in last 3 hours : ").append(rain.getVolume_3h()).append("mm^3\n")
-                //.append("Snow volume in last hour : ").append(snow.getVolume_1h()).append("mm^3\n")
-                //.append("Snow volume in last 3 hours : ").append(snow.getVolume_3h()).append("mm^3\n")
+                .append("Humidity : ").append(temp.getHumidity()).append("%\n")
+                //.append("Cloudiness : ").append(cloudiness).append("%\n")
+                .append("Wind speed : ").append(wind.getSpeed()).append(" m/s\n")
+                .append("Wind deg : ").append(wind.getDirection()).append(" degrees\n")
+                .append("Wind gust : ").append(wind.getGust()).append(" m/s\n")
+                //.append("Rain volume in last hour : ").append(rain.getVolume_1h()).append(" mm^3\n")
+                //.append("Rain volume in last 3 hours : ").append(rain.getVolume_3h()).append(" mm^3\n")
+                //.append("Snow volume in last hour : ").append(snow.getVolume_1h()).append(" mm^3\n")
+                //.append("Snow volume in last 3 hours : ").append(snow.getVolume_3h()).append(" mm^3\n")
                 .toString();
     }
 }
