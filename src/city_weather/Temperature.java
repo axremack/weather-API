@@ -15,11 +15,11 @@ public class Temperature {
     @SerializedName("temp_min")
     private double min;
 
-    private double pressure;
-    private double humidity;
+    private int pressure;
+    private int humidity;
 
     // Constructeur
-    public Temperature(double temp, double feel, double max, double min, double pressure, double humidity) {
+    public Temperature(double temp, double feel, double max, double min, int pressure, int humidity) {
         this.temp = temp;
         this.feel = feel;
         this.max = max;
@@ -61,19 +61,19 @@ public class Temperature {
         this.min = min;
     }
 
-    public double getPressure() {
+    public int getPressure() {
         return pressure;
     }
 
-    public void setPressure(double pressure) {
+    public void setPressure(int pressure) {
         this.pressure = pressure;
     }
 
-    public double getHumidity() {
+    public int getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(double humidity) {
+    public void setHumidity(int humidity) {
         this.humidity = humidity;
     }
 }
