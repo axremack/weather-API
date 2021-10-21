@@ -14,7 +14,7 @@ public class CityWeather {
     private Temperature temp;
 
     private Wind wind;
-    //private Rain rain;
+    private Rain rain;
     //private Snow snow;
 
     //@SerializedName("clouds.all")
@@ -22,10 +22,13 @@ public class CityWeather {
 
 
     // Constructeur
-    public CityWeather(GeneralWeather[] general_weather, Temperature temp, Wind wind, String city) {
+    public CityWeather(GeneralWeather[] general_weather, Temperature temp, Wind wind, Rain rain, String city) {
         this.general_weather = general_weather;
         this.temp = temp;
         this.wind = wind;
+        System.out.println("Truc");
+        System.out.println(rain.getVolume_1h());
+        this.rain = rain == null ? new Rain(0.0,0.0) : rain;
         //this.rain = rain;
         //this.snow = snow;
         //this.cloudiness = cloudiness;
@@ -53,11 +56,12 @@ public class CityWeather {
         this.wind = wind;
     }
 
-    /*
+
     public Rain getRain() { return rain; }
 
     public void setRain(Rain rain) { this.rain = rain; }
 
+    /*
     public Snow getSnow() { return snow; }
 
     public void setSnow(Snow snow) { this.snow = snow; }
@@ -96,8 +100,8 @@ public class CityWeather {
                 .append("\tWind speed : ").append(wind.getSpeed()).append(" m/s\n")
                 .append("\tWind deg : ").append(wind.getDirection()).append(" degrees\n")
                 .append("\tWind gust : ").append(wind.getGust()).append(" m/s\n\n")
-                //.append("	Rain volume in last hour : ").append(rain.getVolume_1h()).append(" mm^3\n")
-                //.append("	Rain volume in last 3 hours : ").append(rain.getVolume_3h()).append(" mm^3\n")
+                .append("\tRain volume in last hour : ").append(rain.getVolume_1h()).append(" mm\n")
+                .append("\tRain volume in last 3 hours : ").append(rain.getVolume_3h()).append(" mm\n")
                 //.append("	Snow volume in last hour : ").append(snow.getVolume_1h()).append(" mm^3\n")
                 //.append("	Snow volume in last 3 hours : ").append(snow.getVolume_3h()).append(" mm^3\n")
                 .toString();
