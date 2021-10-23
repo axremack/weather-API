@@ -14,14 +14,14 @@ import com.google.gson.GsonBuilder;
 
 public class WeatherFetcher {
 
-    public CityWeather getWeatherIn() throws Exception {
+    public CityWeather getWeatherIn(String city) throws Exception {
         final String api_key = "47631728a917d56bffde4b26e7e461e3";
         String line;
         String json;
         HttpURLConnection urlConnection = null ;
 
         try {
-            URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=Clermont-Ferrand&appid=47631728a917d56bffde4b26e7e461e3&units=Metric");
+            URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + api_key + "&units=Metric");
             urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
