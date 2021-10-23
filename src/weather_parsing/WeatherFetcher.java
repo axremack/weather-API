@@ -37,9 +37,6 @@ public class WeatherFetcher {
             Gson gson = new Gson();
             CityWeather weather = gson.fromJson(json, CityWeather.class);
 
-            String w = weather.toString();
-            System.out.print(w);
-
             return weather;
 
         } finally {

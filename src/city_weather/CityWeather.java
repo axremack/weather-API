@@ -89,7 +89,6 @@ public class CityWeather {
         return summary.append("Weather for city : ").append(this.city).append("\n")
                 .append("\tGeneral weather : ").append(general_weather[0].getType()).append(" -- ").append(general_weather[0].getDescription()).append("\n\n")
                 .append("\tCurrent temperature : ").append(temp.getTemp()).append("°C\n")
-                .append("\tCurrent temperature : ").append(temp.getTemp()).append("°C\n")
                 .append("\tTemperature felt : ").append(temp.getFeel()).append("°C\n")
                 .append("\tMinimum temperature : ").append(temp.getMin()).append("°C\n")
                 .append("\tMaximum temperature : ").append(temp.getMax()).append("°C\n")
