@@ -7,10 +7,10 @@ public class Wind {
     private double speed;
 
     @SerializedName("deg")
-    private double direction;  //(maybe int ?)
+    private double direction;
 
     // Paramètres optionnels
-    private double gust;   //(metter/sec)
+    private double gust = 0;
 
     // Constructeurs
     public Wind(double speed, double direction, double gust) {

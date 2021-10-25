@@ -10,7 +10,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class WeatherFetcher {
 

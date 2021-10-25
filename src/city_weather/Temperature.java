@@ -3,7 +3,6 @@ package city_weather;
 import com.google.gson.annotations.SerializedName;
 
 public class Temperature {
-    // Paramètres obligatoires
     private double temp;
 
     @SerializedName("feels_like")
